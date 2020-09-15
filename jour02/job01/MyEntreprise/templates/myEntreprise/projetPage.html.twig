@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projet {% endblock %}
+
+{% block body %}
+    <div class="card text-center">
+        <div class="card-header">
+            {{ projet.title }}
+        </div>
+        <div class="card-body">
+            <img class="card-img-top img-thumbnail w-50" src="{{ projet.image }}" alt="">
+            <p class="card-text">{{ projet.content | raw }}</p>
+            <a href="{{ path('home') }}" class="btn btn-primary">Go back</a>
+        </div>
+        <div class="card-footer text-muted">
+            {{ projet.createdAt | date("m/d/Y")}}
+        </div>
+    </div>
+{% endblock %}
