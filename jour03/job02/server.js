@@ -8,12 +8,12 @@ let handleRequest = (request, response) => {
     fs.readFile('./index.html', null, function (error, data) {
         if (error) {
             response.writeHead(404);
-            respone.write('Whoops! File not found!');
+            response.write('Whoops! File not found!');
         } else {
             response.write(data);
         }
         response.end();
     });
 };
- 
+
 http.createServer(handleRequest).listen(3000);
