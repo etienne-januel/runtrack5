@@ -6,8 +6,6 @@ import MagnificientEqualButton from './MagnificientEqualButton';
 
 import './calculator.css';
 
-
-
 /* Le component principal, il sera composée des
 components ci-dessus, entre autre. */
 class Calculator extends Component {
