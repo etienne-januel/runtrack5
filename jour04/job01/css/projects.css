@@ -1,0 +1,86 @@
+.project-slider {
+    display: flex;
+    justify-content: space-around;
+    width: 80vw;
+    height: 80vh;
+    padding: 20px;
+}
+
+.project-slider-nav {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-slider-arrow {
+    width: 48px;
+    cursor: pointer;
+}
+
+.project-slider-arrow-right:hover :first-child {
+    transition: .3s;
+    transform: translateX(4px);
+}
+
+.project-slider-arrow-left:hover :first-child {
+    transition: .3s;
+    transform: translateX(-4px);
+}
+
+.project-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-title {
+    font-size: 2rem;
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+}
+
+.project-skill-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.project-highlighted {
+    width: 60vw;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+}
+
+.project-skill {
+    width: 64px;
+    height: auto;
+    padding: 10px;
+    border-radius: 100px;
+}
+
+.project-skill:hover {
+    background-color: #e2e2e2;
+}
+
+.slider-item-fadeout {
+    animation: fade-out .5s ease forwards;
+}
+
+.slider-item-hidden {
+    opacity: 0;
+}
+
+.slider-item-fadein {
+    animation: fade-in .5s ease forwards;
+}

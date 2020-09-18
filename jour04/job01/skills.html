@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compétences</title>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/progressbar.js"></script>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/skills.css">
+
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div>
+                <svg style="width: 32px; height: 32px;" id="logo" viewBox="0 0 185 183">
+                    <defs>
+                        <style>
+                            .cls-1{opacity:0.99;}
+                            .cls-2,.cls-3{fill:none;stroke-miterlimit:10;stroke-width:18px;}
+                            .cls-2{stroke:#4d4d4d;}
+                            .cls-3{stroke:#3fa9f5;}
+                        </style>
+                    </defs>
+                    <g id="letterE" class="cls-1">
+                        <path class="cls-2" d="M92.5,175a82.5,82.5,0,0,1,0-165" transform="translate(0 -1)"/>
+                        <line class="cls-2" x1="10" y1="91" x2="164" y2="91"/>
+                    </g>
+                    <g id="letterJ">
+                        <path class="cls-3" d="M175,92.5c0,45.56-35.82,82.5-80,82.5" transform="translate(0 -1)"/>
+                        <line class="cls-3" x1="95" y1="9" x2="175" y2="9"/>
+                        <line class="cls-3" x1="175" y1="93" x2="175"/>
+                    </g>
+                    <g id="menuBurger">
+                        <line class="cls-2" y1="174" x2="185" y2="174"/>
+                        <line class="cls-2" x1="32.44" y1="91" x2="152.56" y2="91"/>
+                        <line class="cls-2" y1="9" x2="185" y2="9"/>
+                    </g>
+                </svg>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="index.html">Accueil</a>
+                    <a href="projects.html">Projets</a>
+                    <a href="skills.html" active>Compétences</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <section id="skill" class="untoggled" order="3">
+            <div class="skill-item" id="html" level="80">
+                <strong class="skill-progress">
+                    <img class="skill-icon" src="css/images/html5-original.svg" alt="">
+                    <span class="skill-text" style="display: none">HTML</span>
+                    <span class="skill-text" style="display: none">80%</span>
+                </strong>
+            </div>
+
+            <div class="skill-item" id="css" level="60">
+                <strong class="skill-progress">
+                    <img class="skill-icon" src="css/images/css3-original.svg" alt="">
+                    <span class="skill-text" style="display: none">CSS</span>
+                    <span class="skill-text" style="display: none">60%</span>
+                </strong>
+            </div>
+
+            <div class="skill-item" id="javascript" level="80">
+                <strong class="skill-progress">
+                    <img class="skill-icon" src="css/images/javascript-original.svg" alt="">
+                    <span class="skill-text" style="display: none">Javascript</span>
+                    <span class="skill-text" style="display: none">80%</span>
+                </strong>
+            </div>
+
+            <div class="skill-item" id="php" level="80">
+                <strong class="skill-progress">
+                    <img class="skill-icon" src="css/images/php-original.svg" alt="">
+                    <span class="skill-text" style="display: none">PHP</span>
+                    <span class="skill-text" style="display: none">80%</span>
+                </strong>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/skills.js"></script>
+    
+</body>
+</html>
