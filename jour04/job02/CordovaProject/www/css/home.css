@@ -1,0 +1,86 @@
+@font-face {
+    font-family: "Roboto-Light";
+    src: url("fonts/Roboto-Light.ttf"),
+}
+
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url("fonts/Roboto-Regular.ttf"),
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Roboto-Light;
+    width: 100%;
+}
+
+header {
+    font-family: Roboto-Regular;
+    padding: 1rem 4rem;
+    background-color: #fff;
+    border-bottom: 1px solid #4D4D4D;
+    box-shadow: 0px 3px 3px #4D4D4D;
+
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    display: flex;    
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+a, a[active]:hover {
+    padding: 0px 1rem;
+    color: #4D4D4D;
+}
+
+a:hover, a[active]:hover {
+    transition: .3s;
+}
+
+
+a:hover, [active] {
+    color: #3FA9F5;
+}
+
+div.main-container {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+section {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 360px) and (min-height: 640px) {
+    #menuBurger {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 360px) and (max-height: 640px) {
+    #letterE, #letterJ {
+        display: none;
+    }
+
+    .navbar {
+        display: none;
+    }
+}

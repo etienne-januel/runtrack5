@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets</title>
+
+    <script src="js/jquery.js"></script>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/projects.css">
+    
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div>
+                <svg style="width: 32px; height: 32px;" id="logo" viewBox="0 0 185 183">
+                    <defs>
+                        <style>
+                            .cls-1{opacity:0.99;}
+                            .cls-2,.cls-3{fill:none;stroke-miterlimit:10;stroke-width:18px;}
+                            .cls-2{stroke:#4d4d4d;}
+                            .cls-3{stroke:#3fa9f5;}
+                        </style>
+                    </defs>
+                    <g id="letterE" class="cls-1">
+                        <path class="cls-2" d="M92.5,175a82.5,82.5,0,0,1,0-165" transform="translate(0 -1)"/>
+                        <line class="cls-2" x1="10" y1="91" x2="164" y2="91"/>
+                    </g>
+                    <g id="letterJ">
+                        <path class="cls-3" d="M175,92.5c0,45.56-35.82,82.5-80,82.5" transform="translate(0 -1)"/>
+                        <line class="cls-3" x1="95" y1="9" x2="175" y2="9"/>
+                        <line class="cls-3" x1="175" y1="93" x2="175"/>
+                    </g>
+                    <g id="menuBurger">
+                        <line class="cls-2" y1="174" x2="185" y2="174"/>
+                        <line class="cls-2" x1="32.44" y1="91" x2="152.56" y2="91"/>
+                        <line class="cls-2" y1="9" x2="185" y2="9"/>
+                    </g>
+                </svg>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="index.html">Accueil</a>
+                    <a href="projects.html" active>Projets</a>
+                    <a href="skills.html">Compétences</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="project-slider">
+            <div class="project-slider-nav">
+                <a>
+                    <svg id="prev" class="project-slider-arrow project-slider-arrow-left" viewBox="0 0 24 24">
+                        <path fill="black" d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"/>
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="project-container">
+                <article id="project-0" class="project-item slider-item-hidden">
+                    <h3 class="project-title">Projet 1</h3>
+                    <div class="project-top">
+                        <div class="project-highlighted">
+                            <img class="project-image" src="https://www.placehold.it/300x100" alt="">
+                        </div>
+                        <div class="project-skill-container">
+                            <img class="project-skill"src="https://www.placehold.it/50x50" alt=""/>
+                            <img class="project-skill"src="https://www.placehold.it/50x50" alt=""/>
+                            <img class="project-skill"src="https://www.placehold.it/50x50" alt=""/>
+                        </div>
+                    </div>
+                    <span class="project-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum blanditiis repellat, accusamus alias dolorum non, eveniet deserunt dolore ipsa iusto temporibus praesentium vel animi nobis, explicabo vitae saepe dolorem illum.</span>
+                </article>
+
+                <article id="project-2" class="project-item slider-item-hidden">
+                    <h3 class="project-title">Projet 2</h3>
+                    <div class="project-top">
+                        <div class="project-highlighted">
+                            <img class="project-image" src="https://www.placehold.it/300x100" alt="">
+                        </div>
+                        <div class="project-skill-container">
+                            <img class="project-skill"src="https://www.placehold.it/50x50" alt=""/>
+                            <img class="project-skill"src="https://www.placehold.it/50x50" alt=""/>
+                            <img class="project-skill"src="https://www.placehold.it/50x50" alt=""/>
+                        </div>
+                    </div>
+                    <span class="project-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sed minima iusto laudantium commodi adipisci. Culpa necessitatibus odit fugiat cupiditate commodi repudiandae provident officiis! Magni reprehenderit architecto repellat dolorem facilis!</span>
+                </article>
+
+                <article id="project-3" class="project-item slider-item-hidden">
+                    <h3 class="project-title">Projet 3</h3>
+                    <div class="project-top">
+                        <div class="project-highlighted">
+                            <img class="project-image" src="https://www.placehold.it/300x100" alt="">
+                        </div>
+                        <div class="project-skill-container">
+                            <img class="project-skill"src="https://www.placehold.it/50x50" alt=""/>
+                            <img class="project-skill"src="https://www.placehold.it/50x50" alt=""/>
+                            <img class="project-skill"src="https://www.placehold.it/50x50" alt=""/>
+                        </div>
+                    </div>
+                    <span class="project-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem enim pariatur quasi ipsum! Incidunt quisquam earum numquam delectus rem ex, sunt minima exercitationem quam excepturi rerum ea nisi eius ratione!</span>
+                </article>
+            </div>
+
+            <div class="project-slider-nav">
+                <a>
+                    <svg id="next" class="project-slider-arrow project-slider-arrow-right" viewBox="0 0 24 24">
+                        <path fill="#111" d="M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z"/>
+                        <path fill="none" d="M0 0h24v24H0z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/projects.js"></script>
+</body>
+</html>
