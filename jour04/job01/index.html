@@ -1,0 +1,803 @@
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Chocolaterie la Cigale</title>
+        <meta name="keywords" lang="fr" content="chocolatiers, chocolaterie-la-cigale, boutique en ligne de chocolats, boutique chocolats, boutique chocolat, chocolats fins, bonbons, bonbon, bonbons de chocolat, chocolat, chocolats, chocolat diabète, chocolats diabétiques, chocolat santé, sculptures chocolat, plaques chocolat, écrins, bouchés, spécialités chocolat, chocolatier Lot-et-Garonne, chocolatier de Lot-et-Garonne, chocolatiers, chocolatier Nérac, chocolatier de Nérac, cacao,  cacaoyer, cacaotier, chocolatier de Gascogne, chocolat, chocolate, chocolats, choconaille, cacao,  feves, cacaoyer, cacaotier, chocolatier, chocolatiers, bonbons, bonbon, artisan chocolatier,  artisan, maitre artisan,  cadeau chocolats, cadeau d'affaire, cadeau d'entreprise, panier cadeau, coffret cadeau,  expédition, mail order, cadeau de Noël, fête des mères, Pâques, œuf de Pâques, visite d'entreprise, visite guidée chocolaterie, club du troisième âge, ballotin de chocolat, tablette de chocolat, chocolat café, chocolat praliné, nougat, caramel, noisette, pistache, pur beurre de cacao, épice, ganache, chocolat français, délice, saint Valentin, salon du chocolat, office du tourisme, maitre chocolatier, gastronomie, spécialité gastronomique, produits régionaux, organique, gluten, allergie chocolat, équitable, chocolat équitable, chocolat bio, giandujas, armagnac, prunonoix, décoration table, pruneaux, agen">
+        <meta name="description" lang="fr" content="La chocolaterie artisanale La Cigale est un lieu de création au service des plaisirs gastronomiques. Nos produits savent allier les saveurs les plus recherchées à un esthétique raffiné. Venez découvrir l'histoire du chocolat, la fabrication du chocolat,  et toutes les spécialités gourmandes à base de chocolat que vous pouvez acheter directement sur le site de la chocolaterie grâce à notre boutique en ligne, ou dans notre magasins de Nérac au cœur du  Lot-et-Garonne.">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link href="img/favicon.png" rel="icon" type="image/png">
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script%7CLato:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap-dark.css">
+        <link rel="stylesheet" href="css/theme-dark.css" id="pagestyle">
+    </head>
+    <body>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-fixed-top shadow" id="js-nav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-target="#myNavbar" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand"><img src="img/logo1.png" alt="logo"></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#about">La chocolaterie</a></li>
+                        <li><a href="#special">Offres spéciales</a></li>
+                        <li><a href="#products">Produits</a></li>
+                        <li><a href="#testimonials">Une histoire de famille</a></li>
+                        <li><a href="#history">Historique</a></li>
+                        <li><a href="#home">Actualités</a></li>
+                        <li><a href="#home">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- fin navigation -->
+
+        <!-- Panier -->
+        <span id="items-counter" class="h3 cart-items-counter" style="display: none">0</span>
+
+        <div class="cart-widget-container">
+            <div class="cart-widget text-center">
+                <a class="close" id="cart-widget-close">
+                    <span class="ti-close"></span>
+                </a>
+
+                <img src="img/logo1.png" alt="Logo du Magasin" width="200" class="cart-logo">
+                <h3 class="section-heading">Votre panier</h3>
+
+                <!-- Message panier vide -->
+                <div id="cart-empty" class="cart-empty">
+                    <h4>est vide <span class="ti-face-sad icon"></span></h4>
+                </div>
+                <!-- Fin de Message panier vide -->
+
+                <!-- Container / JS -->
+                <div class="item-container" id="items"></div>
+                <!-- Fin de Container / JS -->
+
+                <!-- Options de livraison -->
+                <div class="cart-delivery" id="cart-delivery">
+                    <h4 class="section-heading">Livraison et frais de port</h4>
+                    <div class="custom-radio">
+                        <input type="radio" id="radio1" name="delivery" value="10.00" checked>
+                        <label for="radio1">Par la poste (5€) </label>
+                    </div>
+                    <div class="custom-radio">
+                        <input type="radio" id="radio2" name="delivery" value="10.00" checked>
+                        <label for="radio2">Colissimo (10€) </label>
+                    </div>
+                    <div class="custom-radio">
+                        <input type="radio" id="radio3" name="delivery" value="10.00" checked>
+                        <label for="radio3">Chronopost international (15€) </label>
+                    </div>
+                </div>
+                <!-- Fin de Options de livraison -->
+
+                <!-- Calcul du panier -->
+                <div class="cart-summary" id="cart-summary">
+                    <h4 class="section-heading">Détail</h4>
+                    <div class="cart-summary-row" id="cart-total">Total produits <span class="cart-value"><span id="cost_value">0.00</span> €</span></div>
+                    <div class="cart-summary-row">Livraison
+                        <span class="cart-value">
+                            <span id="cost_delivery"></span> €
+                        </span>
+                    </div>
+                    <div class="cart-summary-row cart-summary-row-total">Total
+                        <span class="cart-value">
+                            <span id="total-total"></span> €
+
+                        </span>
+                    </div>
+                </div>
+                <!-- Fin de Calcul du panier -->
+
+                            <!-- HIDDEN PAYPAL FORM -->
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" class="cart-form" id="cart-form">
+                    <!-- Identify your business so that you can collect the payments. -->
+                    <input type="hidden" name="business" value="yourpaypal@email.com">
+                    <!-- Specify a Buy Now button. -->
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <!-- Specify details about the item that buyers will purchase. -->
+                    <input type="hidden" name="item_name" value="Choco - checkout">
+                    <input type="hidden" name="amount" id="amount" value="">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <!-- Display the payment button. -->
+                    <button type="submit" name="submit" class="btn btn-default btn-lg">
+                    Paiement <span class="ti-arrow-right"></span>
+                    </button>
+                </form>
+            <!-- / HIDDEN PAYPAL FORM -->
+
+            </div>
+
+            <div class="cart-widget-close-overlay"></div>
+        </div>
+        <!-- Fin de Panier -->
+
+        <!-- Section accueil -->
+        <section class="home section image-slider" id="home">
+            <div class="home-slider text-center">
+
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background: url(img/slider/slide2.jpg);">
+                        <img src="img/logo1.png" alt="logo">
+                        <h2 class="home-slider-title-main white-color">Chocoloterie artisanale</h2>
+                        <div class="home-buttons text-center" href="#products"> <a href="#special" class="btn btn-lg btn-primary" > Nos produits</a></div>
+                        <a href="#products" class="arrow bounce text-center"><span class="ti-mouse"></span><span class="ti-angle-double-down"></span></a>
+                    </div>
+
+                    <div class="swiper-slide" style="background: url(img/slider/slide1.jpg);">
+                        <img src="img/logo1.png" alt="logo">
+                        <h2 class="home-slider-title-main white-color">Tout le goût du chocolat</h2>
+                        <div class="home-buttons text-center" href="#products"> <a href="#special" class="btn btn-lg btn-primary" > Offre spéciales</a></div>
+                        <a href="#products" class="arrow bounce text-center"><span class="ti-mouse"></span><span class="ti-angle-double-down"></span></a>
+                    </div>
+                </div>
+                <div class="home-pagination"></div>
+                <div class="home-slider-next right-arrow-negative"> <span class="ti-arrow-right"></span></div>
+                <div class="home-slider-prev left-arrow-negative"> <span class="ti-arrow-left"></span></div>
+            </div>
+        </section>
+        <!-- fin section Accueil -->
+
+        <!-- Section la Chocolaterie --->
+        <section class="container-fluid about white-color no-padding" id="about">
+            <div class="about-background about-background-1 row no-margin">
+                <div class="col-md-6 about-black-box">
+                    <h3 class="section-heading"> La chocoloterie</h3>
+                    <p>Après avoir exercé, avec succès, pendant plus de vingt ans le métier de pâtissier dans sa pâtisserie Henri IV de Nérac, Didier SARRAUSTE décide de se consacrer entièrement à sa passion, la chocolaterie. Didier SARRAUSTE maître artisan chocolatier fait ses classes en Suisse à l’École internationale de confiseries de Bâle et décroche le bonbon d'honneur chez Le Nôtre, à Paris. Il crée La Chocolaterie Artisanale La Cigale en 1981. Elle porte le même nom que sa maison où il fit ses premiers chocolats. Le vif succès remporté par ses chocolats ne détourne pas Didier SARRAUSTE et Pierrette son épouse de leur objectif qui est de conserver une entreprise artisanale à dimension humaine et familiale, avec un nombre réduit d'employés. En 2003 il prend sa retraite après avoir transmis sa passion et son savoir faire à son fils Eric SARRAUSTE qu'il continu d'aider et de conseiller. C'est aujourd'hui Éric et Monette SARRAUSTE son épouse qui vous accueillent dans leur établissement pour votre plus grand plaisir.</p>
+                    <a href="#testimonials" class="btn btn-default"> En savoir plus</a>
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </section>
+
+
+        <!-- / fin de la Section la Chocolaterie --->
+
+        <!-- Section offre spéciale --->
+        <section class="countdown" id="special">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="section-heading">Offre spéciale</h3>
+                    </div>
+
+                    <div class="col-md-5">
+                        <ul class="product-list product-list-vertical">
+                            <li class="wow fadeInUp" data-wow-delay=".2s">
+                                <span class="product-list-left pull-left">
+                                    <a href="#" data-target="#product-01" data-toggle="modal">
+                                        <img class="product-list-primary-img" src="img/product3.png" alt="produit">
+                                        <img class="product-list-secondary-img" src="img/product4.png" alt="produit">
+                                    </a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-7 text-center">
+                        <div class="countdown-container">
+                            <h3 class="wow fadeInDown">Chocolats de Pâques</h3>
+                            <p class="wow fadeInDown"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem corrupti vero voluptate officiis doloremque, dolorum nemo amet suscipit nulla sit! Provident distinctio optio, alias similique! Recusandae aliquid nesciunt nobis, et.</p>
+
+                            <!-- JS countdown -->
+                        <ul id="countdown" class="countdown-counter wow fadeInUp"></ul>
+
+                        <!-- JS countdown -->
+                        <span class="countdown-price h3 wow fadeInUp">30€</span>
+                        <button type="button" class="btn btn-default add-item wow swing" data-image="img/product3.png" data-name="Chocolat de Pâques" data-cost="30€" data-id="9">
+                            <span class="ti-shopping-cart"></span>Ajouter au panier
+                        </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- / fin de la Section offre spéciale --->
+
+    <!-- Section Produits -->
+    <section class="section-min section product produits" id="products">
+        <div class="container overflow-hidden">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-heading">Produits</h3>
+                </div>
+    
+                <div class="col-md-12">
+                    <div class="product-list-slider">
+                        <ul class="swiper-wrapper product-list product-list-vertical">
+                            <!-- Single item -->
+                            <li class="swiper-slide wow fadeInUp text-center" data-wow-delay=".2s">
+                                <span class="product-list-left pull-left">
+                                    <a href="#" data-target="#product-01" data-toggle="modal">
+                                        <img alt="Image produit" class="product-list-primary-img" src="img/product3.png">
+                                        <img alt="Image produit" class="product-list-secondary-img" src="img/product4.png">
+                                    </a>
+                                </span>
+                                <a href="#" data-target="#product-01" data-toggle="modal">
+                                    <span class="product-list-right pull-left">
+                                        <span class="product-list-name h3">Chocolat</span>
+                                        <span class="product-list-price">3,50 €</span>
+                                    </span>
+                                </a>
+                                <button type="button" class="btn btn-default add-item" data-image="img/product3.png" data-name="Chocolat" data-cost="3,50" data-id="1">
+                                    <span class="ti-shopping-cart"></span>Ajouter au panier
+                                </button>
+                            </li>
+                            <!-- /Fin de Single item -->
+    
+                            <!-- Single item -->
+                            <li class="swiper-slide wow fadeInUp text-center" data-wow-delay=".4s">
+                                <span class="product-list-left pull-left">
+                                    <a href="#" data-target="#product-01" data-toggle="modal">
+                                        <img alt="Image produit" class="product-list-primary-img" src="img/product3.png">
+                                        <img alt="Image produit" class="product-list-secondary-img" src="img/product4.png">
+                                    </a>
+                                </span>
+                                <a href="#" data-target="#product-01" data-toggle="modal">
+                                    <span class="product-list-right pull-left">
+                                        <span class="product-list-name h3">Caramel</span>
+                                        <span class="product-list-price">6,50 €</span>
+                                    </span>
+                                </a>
+                                <button type="button" class="btn btn-default add-item" data-image="img/product3.png" data-name="Chocolat" data-cost="3,50" data-id="1">
+                                    <span class="ti-shopping-cart"></span>Ajouter au panier
+                                </button>
+                            </li>
+                            <!-- /Fin de Single item -->
+
+                            <!-- Single item -->
+                            <li class="swiper-slide wow fadeInUp text-center" data-wow-delay=".6s">
+                                <span class="product-list-left pull-left">
+                                    <a href="#" data-target="#product-01" data-toggle="modal">
+                                        <img alt="Image produit" class="product-list-primary-img" src="img/product3.png">
+                                        <img alt="Image produit" class="product-list-secondary-img" src="img/product4.png">
+                                    </a>
+                                </span>
+                                <a href="#" data-target="#product-01" data-toggle="modal">
+                                    <span class="product-list-right pull-left">
+                                        <span class="product-list-name h3">Nougat</span>
+                                        <span class="product-list-price">8,50 €</span>
+                                    </span>
+                                </a>
+                                <button type="button" class="btn btn-default add-item" data-image="img/product3.png" data-name="Chocolat" data-cost="3,50" data-id="1">
+                                    <span class="ti-shopping-cart"></span>Ajouter au panier
+                                </button>
+                            </li>
+                            <!-- /Fin de Single item -->
+
+                            <!-- Single item -->
+                            <li class="swiper-slide wow fadeInUp text-center" data-wow-delay=".2s">
+                                <span class="product-list-left pull-left">
+                                    <a href="#" data-target="#product-01" data-toggle="modal">
+                                        <img alt="Image produit" class="product-list-primary-img" src="img/product3.png">
+                                        <img alt="Image produit" class="product-list-secondary-img" src="img/product4.png">
+                                    </a>
+                                </span>
+                                <a href="#" data-target="#product-01" data-toggle="modal">
+                                    <span class="product-list-right pull-left">
+                                        <span class="product-list-name h3">Chocolat</span>
+                                        <span class="product-list-price">3,50 €</span>
+                                    </span>
+                                </a>
+                                <button type="button" class="btn btn-default add-item" data-image="img/product3.png" data-name="Chocolat" data-cost="3,50" data-id="1">
+                                    <span class="ti-shopping-cart"></span>Ajouter au panier
+                                </button>
+                            </li>
+                            <!-- /Fin de Single item -->
+
+                            <!-- Single item -->
+                            <li class="swiper-slide wow fadeInUp text-center" data-wow-delay=".4s">
+                                <span class="product-list-left pull-left">
+                                    <a href="#" data-target="#product-01" data-toggle="modal">
+                                        <img alt="Image produit" class="product-list-primary-img" src="img/product3.png">
+                                        <img alt="Image produit" class="product-list-secondary-img" src="img/product4.png">
+                                    </a>
+                                </span>
+                                <a href="#" data-target="#product-01" data-toggle="modal">
+                                    <span class="product-list-right pull-left">
+                                        <span class="product-list-name h3">Chocolat</span>
+                                        <span class="product-list-price">3,50 €</span>
+                                    </span>
+                                </a>
+                                <button type="button" class="btn btn-default add-item" data-image="img/product3.png" data-name="Chocolat" data-cost="3,50" data-id="1">
+                                    <span class="ti-shopping-cart"></span>Ajouter au panier
+                                </button>
+                            </li>
+                            <!-- /Fin de Single item -->
+
+                            <!-- Single item -->
+                            <li class="swiper-slide wow fadeInUp text-center" data-wow-delay=".6s">
+                                <span class="product-list-left pull-left">
+                                    <a href="#" data-target="#product-01" data-toggle="modal">
+                                        <img alt="Image produit" class="product-list-primary-img" src="img/product3.png">
+                                        <img alt="Image produit" class="product-list-secondary-img" src="img/product4.png">
+                                    </a>
+                                </span>
+                                <a href="#" data-target="#product-01" data-toggle="modal">
+                                    <span class="product-list-right pull-left">
+                                        <span class="product-list-name h3">Chocolat</span>
+                                        <span class="product-list-price">3,50 €</span>
+                                    </span>
+                                </a>
+                                <button type="button" class="btn btn-default add-item" data-image="img/product3.png" data-name="Chocolat" data-cost="3,50" data-id="1">
+                                    <span class="ti-shopping-cart"></span>Ajouter au panier
+                                </button>
+                            </li>
+                            <!-- /Fin de Single item -->
+                        </ul>
+
+                        <!-- Contrôles -->
+                            
+                    <div class="product-list-pagination text-center"></div>
+
+                    <div class="product-list-slider-next right-arrow-negative">
+                        <span class="ti-arrow-right"></span>
+                    </div>
+                        
+                    <div class="prooduct-list-slider-prev left-arrow-negative">
+                        <span class="ti-arrow-left"></span>
+                    </div>
+                            
+                    <!-- Fin de Contrôles -->
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal description produit -->
+
+            <div class="modal fade product-modal" id="product-01" role="dialog" tabindex="-1">
+                <div class="modal-dialog">
+                    <!-- Contenu du modal -->
+                    <div class="modal-content shadow">
+                        <a class="close" data-dismiss="modal"> <span class="ti-close"></span></a>
+                        <div class="modal-body">
+                        <!-- Wrapper slider -->
+                            <div class="carousel slide product-slide" id="product-carousel">
+                                <!-- Carousel Slider -->
+                                <div class="carousel-inner cont-slider">
+                                    <div class="item active"> <img src="img/product3.png" alt="Produit"></div>
+                                    <div class="item"> <img src="img/product4.png" alt="Produit"></div>
+                                    <div class="item"> <img src="img/product3.png" alt="Produit"></div>
+                                    <div class="item"> <img src="img/product4.png" alt="Produit"></div>
+                                </div>
+                                <!-- Fin de Carousel Slider -->
+
+                                <!-- Carousel Thumbnails -->
+                                <ol class="carousel-indicators">
+                                    <li class="active" data-slide-to="0" data-target="#product-carousel">
+                                        <img src="img/product3.png" alt="Produit">
+                                    </li>
+                                    <li data-slide-to="1" data-target="#product-carousel">
+                                        <img src="img/product4.png" alt="Produit">
+                                    </li>
+                                    <li data-slide-to="2" data-target="#product-carousel">
+                                        <img src="img/product3.png" alt="Produit">
+                                    </li>
+                                    <li data-slide-to="3" data-target="#product-carousel">
+                                        <img src="img/product4.png" alt="Produit">
+                                    </li>
+                                </ol>
+                                <!-- Fin de Carousel Thumbnails -->
+                            </div>
+                        <!-- Fin de Wrapper slider -->
+
+                        <!-- Description du produit -->
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-8 col-md-push-2">
+                                        <div class="row">
+                                            <div class="col-md-12 product-modal-header">
+                                                <h3 class="pull-left product-modal-title">Chocolat</h3>
+                                                <span class="product-action-section">
+                                                    <span class="price">3,50€</span>
+                                                    <button class="btn btn-default add-item" type="button" data-image="img/product3.png" data-name="Chocolat de Pâques" data-cost="3.50" data-id="8">
+                                                        <span class="ti-shopping-cart"></span>
+                                                        Ajouter au panier
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 col-md-push-2 product-description">
+                                        <h4 class="section-heading">Titre de la description</h4>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem omnis, consequatur aliquam blanditiis quis voluptatem eos porro. Distinctio, ducimus omnis!</p>
+                                        <div class="product-tabs">
+                                            <ul class="nav nav-tabs">
+                                                <li class="active"><a href="#tab1" data-toggle="tab">Détails</a></li>
+                                                <li><a href="#tab2" data-toggle="tab">Origines</a></li>
+                                                <li><a href="#tab3" data-toggle="tab">Informations énergétiques</a></li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div id="tab1" class="tab-pane fade in active">
+                                                    <h4 class="section-heading">Détails</h4>
+                                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, sint veritatis. Ad, quaerat! Quibusdam, amet? Ipsam odio accusamus recusandae adipisci.</p>
+                                                </div>
+                                                <div id="tab2" class="tab-pane fade">
+                                                    <h4 class="section-heading">Origines</h4>
+                                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, sint veritatis. Ad, quaerat! Quibusdam, amet? Ipsam odio accusamus recusandae adipisci.</p>
+                                                </div>
+                                                <div id="tab3" class="tab-pane fade">
+                                                    <h4 class="section-heading">Informations énergétiques</h4>
+                                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, sint veritatis. Ad, quaerat! Quibusdam, amet? Ipsam odio accusamus recusandae adipisci.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- Description du produit -->
+                        </div>
+                    </div>
+                    <!-- Fin de Contenu du modal -->
+                </div>
+            </div>
+
+            <!-- Fin de Modal description produit -->
+        </div>
+    </section>
+    
+    <!-- /Fin de Section Produits -->
+
+    <!-- Une histoire de famille -->
+    
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-heading">Une histoire de famille</h3>
+                </div>
+
+                <div class="col-md-12 testimonials-slider text-center">
+                    <!-- Carousel wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Item -->
+                            <div class="swiper-slide">
+                                <div class="testimonials-container shadow">
+                                    <img class="wow fadeInUp" src="img/user.png" alt="Photo profil">
+                                    <h3 class="wow fadeInUp" data-wow-delay=".4s">Didier SARRAUSTE <span>Fondateur</span> </h3>
+                                    <p class="wow fadeInUp" data-wow-delay=".6s">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, facere. Unde iusto alias aspernatur fugiat cupiditate quas. Voluptatum, praesentium error!</p>
+                                </div>
+                            </div>
+                            <!-- Fin de Item -->
+                            <!-- Item -->
+                            <div class="swiper-slide">
+                                <div class="testimonials-container shadow">
+                                    <img class="wow fadeInUp" src="img/product3.png" alt="Photo profil">
+                                    <h3 class="wow fadeInUp" data-wow-delay=".4s">Eric SARRAUSTE <span>Gérant</span> </h3>
+                                    <p class="wow fadeInUp" data-wow-delay=".6s">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, facere. Unde iusto alias aspernatur fugiat cupiditate quas. Voluptatum, praesentium error!</p>
+                                </div>
+                            </div>
+                            <!-- Fin de Item -->
+                        </div>
+
+                        <!-- Pagination carousel -->
+                        <div class="testimonials-pagination"></div>
+                        <div class="testimonials-slider-next right-arrow-negative">
+                            <span class="ti-arrow-right"></span>
+                        </div>
+                        <div class="testimonials-slider-prev left-arrow-negative">
+                            <span class="ti-arrow-left"></span>
+                        </div>
+                        
+                        <!-- Fin de Pagination carousel -->
+                        
+                    <!-- Fin de Carousel wrapper -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin de Une histoire de famille -->
+
+    <!-- Timeline -->
+    <section class="timeline" id="history">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-heading">Historique</h3>
+                    <div class="timeline-container" id="timeline">
+                        <!-- Item de la timeline -->
+                        <div class="timeline-block timeline-block-image-1">
+                            <div class="timeline-point"></div>
+                            <div class="timeline-content wow fadeInLeft">
+                                <span class="timeline-date">
+                                    <span class="timeline-month">Mai</span>
+                                    <span class="timeline-year">1981</span>
+                                </span>
+                                <h2>Le début</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil id perferendis dolore nulla, quibusdam architecto ipsum ab officiis quidem voluptatibus.</p>
+                            </div>
+                        </div>
+                        <!-- Fin de Item de la timeline -->
+                        <!-- Item de la timeline -->
+                        <div class="timeline-block timeline-block-image-2">
+                            <div class="timeline-point"></div>
+                            <div class="timeline-content wow fadeInLeft">
+                                <span class="timeline-date">
+                                    <span class="timeline-month">Juillet</span>
+                                    <span class="timeline-year">1986</span>
+                                </span>
+                                <h2>Après le Début</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil id perferendis dolore nulla, quibusdam architecto ipsum ab officiis quidem voluptatibus.</p>
+                            </div>
+                        </div>
+                        <!-- Fin de Item de la timeline -->
+                        <!-- Item de la timeline -->
+                        <div class="timeline-block timeline-block-image-3">
+                            <div class="timeline-point"></div>
+                            <div class="timeline-content wow fadeInLeft">
+                                <span class="timeline-date">
+                                    <span class="timeline-month">Septembre</span>
+                                    <span class="timeline-year">1997</span>
+                                </span>
+                                <h2>Un peu après l'après du début</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil id perferendis dolore nulla, quibusdam architecto ipsum ab officiis quidem voluptatibus.</p>
+                            </div>
+                        </div>
+                        <!-- Fin de Item de la timeline -->
+                        <!-- Item de la timeline -->
+                        <div class="timeline-block timeline-block-image-4">
+                            <div class="timeline-point"></div>
+                            <div class="timeline-content wow fadeInLeft">
+                                <span class="timeline-date">
+                                    <span class="timeline-month">Janvier</span>
+                                    <span class="timeline-year">2010</span>
+                                </span>
+                                <h2>Après le un peu de l'après du début</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil id perferendis dolore nulla, quibusdam architecto ipsum ab officiis quidem voluptatibus.</p>
+                            </div>
+                        </div>
+                        <!-- Fin de Item de la timeline -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fin de Timeline -->
+
+    <!-- Actualités -->
+    <section class="post-list" id="news">
+        <div class="container overflow-hidden">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-heading">Actualités</h3>
+                </div>
+
+                <div class="post-slider col-md-12">
+                    <!-- Carousel Actualités -->
+                    <div class="swiper-wrapper">
+
+                        <!-- Item Actualités -->
+                        <div class="swiper-slide">
+                            <div class="post-entry wow fadeInUp">
+                                <a href="#" data-toggle="modal" data-target="#post-01">
+                                    <span class="post-entry-cover" style="background-image: url(img/blog-cover.jpg);"></span>
+                                </a>
+
+                                <a href="#" class="h3" data-toggle="modal" data-target="#post-01">Titre de l'actualité</a>
+
+                                <a href="#" data-toggle="modal" data-target="#post-01" classs="post-entry-more">Lire la suite <span class="ti-arrow-right icon"></span></a>
+                            </div>
+                        </div>
+                        <!-- Fin de Item Actualités -->
+
+                        <!-- Item Actualités -->
+                        <div class="swiper-slide">
+                            <div class="post-entry wow fadeInUp">
+                                <a href="#" data-toggle="modal" data-target="#post-02">
+                                    <span class="post-entry-cover" style="background-image: url(img/blog-cover.jpg);"></span>
+                                </a>
+
+                                <a href="#" class="h3" data-toggle="modal" data-target="#post-02">Titre de l'actualité</a>
+
+                                <a href="#" data-toggle="modal" data-target="#post-02" classs="post-entry-more">Lire la suite <span class="ti-arrow-right icon"></span></a>
+                            </div>
+                        </div>
+                        <!-- Fin de Item Actualités -->
+
+                        <!-- Item Actualités -->
+                        <div class="swiper-slide">
+                            <div class="post-entry wow fadeInUp">
+                                <a href="#" data-toggle="modal" data-target="#post-03">
+                                    <span class="post-entry-cover" style="background-image: url(img/blog-cover.jpg);"></span>
+                                </a>
+
+                                <a href="#" class="h3" data-toggle="modal" data-target="#post-03">Titre de l'actualité</a>
+
+                                <a href="#" data-toggle="modal" data-target="#post-03" classs="post-entry-more">Lire la suite <span class="ti-arrow-right icon"></span></a>
+                            </div>
+                        </div>
+                        <!-- Fin de Item Actualités -->
+
+                        <!-- Item Actualités -->
+                        <div class="swiper-slide">
+                            <div class="post-entry wow fadeInUp">
+                                <a href="#" data-toggle="modal" data-target="#post-04">
+                                    <span class="post-entry-cover" style="background-image: url(img/blog-cover.jpg);"></span>
+                                </a>
+
+                                <a href="#" class="h3" data-toggle="modal" data-target="#post-04">Titre de l'actualité</a>
+
+                                <a href="#" data-toggle="modal" data-target="#post-04" classs="post-entry-more">Lire la suite <span class="ti-arrow-right icon"></span></a>
+                            </div>
+                        </div>
+                        <!-- Fin de Item Actualités -->
+                    </div>
+                    <!-- Fin de Carousel Actualités -->
+
+                    <!-- Pagination Actualités -->
+                    <div class="post-pagination text-center"></div>
+                    <div class="post-slider-next right-arrow-negative">
+                        <span class="ti-arrow-right"></span>
+                    </div>
+                    <div class="post-slider-prev left-arrow-negative">
+                        <span class="ti-arrow-left"></span>
+                    </div>
+                        
+                    <!-- Fin de Pagination Actualités -->
+                </div>
+            </div>
+
+            <!-- Modal Actualités-->
+                <div class="modal fade" id="post-01" role="dialog" tabindex="-1">
+                    <div class="modal-dialog">
+                        <!-- Contenu du modal actualités -->
+                        <div class="modal-content shadow">
+                            <a class="close" data-dismiss="modal"> <span class="ti-close"></span></a>
+                            <div class="modal-body">
+                                <div class="post-entry post-entry-modal">
+                                    <h3 class="section-heading">Titre de l'actualité</h3>
+                                    <span class="post-entry-meta">
+                                        <img src="img/user.png" alt="Photo profil" class="post-entry-author pull-left">
+                                        <span class="post-entry-author-name pull-left">ERIC SARRAUSTE</span>
+                                        <span class="post-entry-author-name pull-right">08/11/2018</span>
+                                        <span class="post-entry-time pull-right">
+                                            <span class="post-entry-category">chocolat, cacao, origines</span>
+                                        </span>
+                                    </span>
+                                    <span class="post-entry-cover" style="background-image: url(img/blog-cover.jpg);"></span>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa beatae error fugit consequuntur nemo praesentium quidem voluptates dolore porro consectetur?</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, magnam voluptatem. Esse nemo dolores ullam quo autem, quasi doloremque voluptatum sit ea aspernatur, illum unde ab quia tempora officia? Facere!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fin de Contenu du modal actualités -->
+                    </div>
+                </div>
+            <!-- Fin de Modal Actualités-->
+
+            
+        </div>
+    </section>
+    <!-- Fin de Actualités -->
+
+    <!-- Contact -->
+    <section id="contact" class="contact contact-with-map">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-heading">Contact</h3>
+                </div>
+                <div class="col-md-3">
+                    <div class="contact-data">
+                        <ul class="white-color">
+                            <li><span class="ti-home icon"></span><span>Chocolaterie Artisanale La Cigale</span></br><div style="margin-left: 40px;">2 rue Calvin</br>47600 NERAC</br>FRANCE</div></span></li>
+                            <li><span class="ti-mobile icon"></span>05 05 05 05 05</li>
+                            <li><span class="ti-email icon"></span>mail@exe.com</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-8 col-md-push-1">
+                    <!-- Form de contact -->
+                    <div class="contact-form">
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Nom" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="contact-email" name="contact-email" placeholder="Email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="tel" name="tel" placeholder="Téléphone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Sujet" required>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea class="form-control" id="message" name="message" placeholder="Message" maxLength="140" rows="7"></textarea>
+                            </div>
+
+                            <button type="Submit" id="submit" name="submit" class="btn btn-primary btn-lg text-center float-right">Envoyer votre message</button>
+
+                        </form>
+                    </div>
+                    <!-- Fin de Form de contact -->
+                </div>
+            </div>
+        </div>
+        <!-- Google Map -->
+            <div class="google-maps">
+                <div id="map-canvas"></div>
+            </div>
+        <!-- Fin de Google Map -->
+    </section>
+    <!-- Fin de Contact -->
+
+    <!-- Footer -->
+    <div class="section section-min">
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4 col-md-push-4 text-center">
+                                <img class="footer-logo" src="img/logo1.png" alt="Logo footer">
+                                <div class="social">
+                                    <ul>
+                                        <li><a href="#"><span class="ti-facebook"></span></a></li>
+                                        <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-13">
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-4 col-sm-12">
+                                <div class="footer-newsletter">
+                                    <div class="text-center center">
+                                        <h3>Recevez notre newsletter</h3>
+                                        <form action="#" method="post">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" type="email" placeholder="Email">
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default">
+                                                        <span class="ti-arrow-right"></span>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- Fin de Footer -->
+        <!-- Appel du Js -->
+
+        <script type="text/javascript" src="js/vendor/wow.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="js/vendor/swiper.min.js"></script>
+        <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.countTo.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.inview.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.countdown.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_6m6Glf1-P7jvVdHZ00e3Ue_EoUNe39g"></script>
+        <script type="text/javascript" src="js/tt-cart.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+
+    </body>
+    </html>
