@@ -7,10 +7,13 @@
 </tr>
 
 <?php
-foreach ($row as $user) {
-    echo("<tr>");
-    echo("<td>" . $user["email"] . "</td>");
-    echo("<td>" . $user["firstname"] . "</td>");
-    echo("<td>" . $user["lastname"] . "</td>");
-    echo("</tr>");
-}
+
+    foreach ($row as $user) {
+        echo("<tr>");
+        echo("<td>" . $user["email"] . "</td>");
+        echo("<td>" . $user["firstname"] . "</td>");
+        echo("<td>" . $user["lastname"] . "</td>");
+        echo("</tr>");
+    }
+
+?>
