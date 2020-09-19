@@ -1,0 +1,89 @@
+div.calculator {
+    margin: 5px auto;
+    width: 320px;
+    height: 480px;
+}
+
+.container-flex {
+    display:flex;
+}
+
+.container-row {
+    flex-direction:row;
+}
+
+.container-column {
+    flex-direction:column;
+}
+
+.key {
+    width: 80px;
+    height: 80px;
+    font-size: 2.25em;
+    font-weight: 100;
+    line-height: 80px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.key-zero {
+    width: 160px;
+}
+
+.key-digits {
+    background-color: #e0e0e7;
+}
+
+.key-operators, .key-result {
+    background-color: #ee9f3a;
+    color: #fff;
+}
+
+.key-result {
+    width: 320px;
+}
+
+.key-reset {
+    background-color: #3f3e42;
+    color: #fff;
+}
+
+.key:hover {
+    background-color: #e0e0e7a1;
+}
+
+.key-operators:hover, .key-result:hover {
+    background-color: #3f3e42;
+}
+
+.screen {
+    width: 240px;
+    height: 80px;
+    font-size: 2.25em;
+    font-weight: 200;
+    line-height: 80px;
+    text-align: right;
+    background-color: #2c2d32;
+    color: #FFF;
+}
+
+.result {
+    padding-right: 30px;
+}
+
+.key-operator--selected {
+    background-color: #3f3e42;
+    border-inline: 5px solid #3f3e42;
+}
+
+div.overNineThousand-container {
+    background-color: #2c2d32;
+    margin-top: 25px;
+    padding: 15px;
+    justify-content: center;
+}
+
+.overNineThousand {
+    color: #fff;
+    text-transform: uppercase;
+}
