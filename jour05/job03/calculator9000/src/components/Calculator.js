@@ -73,15 +73,29 @@ class Calculator extends Component {
 
             //Si la key est une virgule
             case '.':
-                //Si il y déjà un point dans l'opéré on exit
-                if(this.state.operatedNumber.indexOf('.') > -1) {
-                    return;
-                //Si il n'y a pas de point dans l'opéré on le concatene
+                console.log("yo")
+                //Si l'opérant est déjà défini
+                if(this.state.operatingNumber !== 'null') {
+                    console.log('operatingNumber')
+                    if(! this.state.operatingNumber.indexOf('.') > -1) {
+                        this.setState({
+                            operatingNumber: this.state.operatingNumber + e.target.textContent,
+                            displayedNumber: this.state.operatingNumber + e.target.textContent
+                        })
+                    } else {
+                        console.log('exit1')
+                        return;
+                    }
                 } else {
-                    this.setState({
-                        operatedNumber: this.state.operatedNumber + e.target.textContent,
-                        displayedNumber: this.state.operatedNumber + e.target.textContent
-                    })
+                    if(! this.state.operatedNumber.indexOf('.') > -1) {
+                        this.setState({
+                            operatedNumber: this.state.operatedNumber + e.target.textContent,
+                            displayedNumber: this.state.operatedNumber + e.target.textContent
+                        })
+                    } else {
+                        console.log('exit2')
+                        return;
+                    }
                 }
             break;
 
@@ -123,22 +137,22 @@ class Calculator extends Component {
 
                     //Si le symbole est un /
                     case '/':
-                        result = Number(this.state.operatedNumber) / Number(this.state.operatingNumber)
+                        result = (Number(this.state.operatedNumber) / Number(this.state.operatingNumber)).toString()
                     break;
 
                     //Si le symbole est un *
                     case '*':
-                        result = Number(this.state.operatedNumber) * Number(this.state.operatingNumber)
+                        result = (Number(this.state.operatedNumber) * Number(this.state.operatingNumber)).toString()
                     break;
 
                     //Si le symbole est un -
                     case '-':
-                        result = Number(this.state.operatedNumber) - Number(this.state.operatingNumber)
+                        result = (Number(this.state.operatedNumber) - Number(this.state.operatingNumber)).toString()
                     break;
 
                     //Si le symbole est un +
                     case '+':
-                        result = Number(this.state.operatedNumber) + Number(this.state.operatingNumber)
+                        result = (Number(this.state.operatedNumber) + Number(this.state.operatingNumber)).toString()
                     break;
                 }
                 if (document.querySelector('.key-operator--selected')) {
@@ -154,6 +168,9 @@ class Calculator extends Component {
             break;
 
             case 'C':
+                if (document.querySelector('.key-operator--selected')) {
+                    document.querySelector('.key-operator--selected').classList.toggle('key-operator--selected');
+                }
                 this.setState({
                     displayedNumber: '0',
                     operatedNumber: '0',
