@@ -16,19 +16,6 @@ class Calculator extends Component {
         operatorSymbol: 'null',
     }
 
-    // updateDisplay = () => {
-    //     if(this.state.result !== 'null') {
-    //         this.setState({
-    //             displayedNumber: this.state.result
-    //         })
-    //     }
-    //     const displayedNumber = (this.state.operatedNumber)
-
-    //     this.setState({
-    //         displayedNumber
-    //     })
-    // }
-
     pressKey = (e) => {
         let result;
         switch(e.target.textContent) {
